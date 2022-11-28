@@ -51,16 +51,18 @@ createApp({
         },  
         // timeout interval 
         loaded() {
-            window.addEventListener("load", (event) => {
                 setInterval(
                     () => {
                         this.next();
                     }
                     ,
                     3000)       
-            });
-        }
+            }
         
+        
+    },
+    mounted() {
+        this.loaded()
     }
     
 }).mount("#app") 
