@@ -50,19 +50,14 @@ createApp({
             this.activeItem = num 
         },  
         // timeout interval 
-        loaded() {
-                setInterval(
-                    () => {
-                        this.next();
-                    }
-                    ,
-                    3000)       
+        autoPlay() {
+                setInterval(this.next(),3000)       
             }
         
         
     },
     mounted() {
-        this.loaded()
+        this.autoPlay()
     }
     
 }).mount("#app") 
