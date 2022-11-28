@@ -6,7 +6,7 @@ createApp({
     data() {
         return{
             activeItem: 0,
-            myInterval: setInterval(this.next,3000),
+            myInterval: "",
             hover: false,
             slides:{
                 images:[
@@ -53,7 +53,7 @@ createApp({
         },  
         // timeout interval 
         autoPlay() {
-            this.myInterval      
+            this.myInterval = setInterval(this.next,3000)      
         },
         stopPlayer(){
             clearInterval(this.myInterval)
@@ -62,7 +62,7 @@ createApp({
             this.stopPlayer()
         },
         hoverF(){
-            this.myInterval
+            this.autoPlay()
         }
         
         
