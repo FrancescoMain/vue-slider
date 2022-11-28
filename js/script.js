@@ -6,6 +6,8 @@ createApp({
     data() {
         return{
             activeItem: 0,
+            myInterval: setInterval(this.next,3000),
+            hover: false,
             slides:{
                 images:[
                     'img/01.webp',
@@ -27,7 +29,7 @@ createApp({
                     "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting,crafting, shootouts and chaos.",
                     "Lost, injured and alone, a stray cat must untangle an anancient mystery to escape a long-forgotten city",
                     'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.'
-                ]               
+                ]  
             } 
         }
     },
@@ -51,14 +53,24 @@ createApp({
         },  
         // timeout interval 
         autoPlay() {
-                setInterval(this.next(),3000)       
-            }
+            this.myInterval      
+        },
+        stopPlayer(){
+            clearInterval(this.myInterval)
+        },
+        hoverT(){
+            this.stopPlayer()
+        },
+        hoverF(){
+            this.myInterval
+        }
         
         
     },
     mounted() {
-        this.autoPlay()
-    }
+            this.autoPlay()      
+    },
+
     
 }).mount("#app") 
 

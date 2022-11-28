@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" @mouseover="hoverT()" @mouseleave="hoverF()" tabindex="0">
 
                 <div class="item">
                     <img :src="slides.images[activeItem]" :alt="slides.titles[activeItem]" />
