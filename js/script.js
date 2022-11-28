@@ -48,7 +48,20 @@ createApp({
         // event on thumbs 
         activeByThumb(num){
             this.activeItem = num 
+        },  
+        // timeout interval 
+        loaded() {
+            window.addEventListener("load", (event) => {
+                setInterval(
+                    () => {
+                        this.next();
+                    }
+                    ,
+                    3000)       
+            });
         }
+        
     }
     
 }).mount("#app") 
+
