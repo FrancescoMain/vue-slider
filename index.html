@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="container">
+            <div class="slider-wrapper" tabindex="0">
+
+                <div class="item">
+                    <img :src="images[activeItem]" :alt="titles[activeItem]" />
+                    <div class="text">
+                        <h3>{{titles[activeItem]}}</h3>
+                        <p>{{texts[activeItem]}}</p>
+                    </div>
+                </div>
+
+                <div class="thumbs">
+                    <div @click="prev()" class="prev"></div>
+                    <div @click="next()" class="next"></div>
+                    <div v-for = "(image, index) in images" class="thumb" :class="index === activeItem ? 'active' : ''">
+                        <img :src="images[index]" alt="titles[index]" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
