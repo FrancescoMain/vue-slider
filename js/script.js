@@ -44,6 +44,10 @@ createApp({
                 this.activeItem = this.images.length
             }
             this.activeItem--
+        },
+        // event on thumbs 
+        activeByThumb(num){
+            this.activeItem = num 
         }
     }
     

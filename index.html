@@ -27,7 +27,10 @@
                 <div class="thumbs">
                     <div @click="prev()" class="prev"></div>
                     <div @click="next()" class="next"></div>
-                    <div v-for = "(image, index) in images" class="thumb" :class="index === activeItem ? 'active' : ''">
+                    <div v-for = "(image, index) in images" 
+                        class="thumb" 
+                        :class="index === activeItem ? 'active' : ''"
+                        @click="activeByThumb(index)">
                         <img :src="images[index]" alt="titles[index]" />
                     </div>
                 </div>
